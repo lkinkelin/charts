@@ -244,7 +244,7 @@ spec:
           livenessProbe:
             initialDelaySeconds: {{ .Values.replica.livenessProbe.initialDelaySeconds }}
             periodSeconds: {{ .Values.replica.livenessProbe.periodSeconds }}
-            timeoutSeconds: {{ .Values.replica.livenessProbe.timeoutSeconds }}
+            timeoutSeconds: {{ add1 .Values.replica.livenessProbe.timeoutSeconds }}
             successThreshold: {{ .Values.replica.livenessProbe.successThreshold }}
             failureThreshold: {{ .Values.replica.livenessProbe.failureThreshold }}
             exec:
@@ -259,7 +259,7 @@ spec:
           readinessProbe:
             initialDelaySeconds: {{ .Values.replica.readinessProbe.initialDelaySeconds }}
             periodSeconds: {{ .Values.replica.readinessProbe.periodSeconds }}
-            timeoutSeconds: {{ .Values.replica.readinessProbe.timeoutSeconds }}
+            timeoutSeconds: {{ add1 .Values.replica.readinessProbe.timeoutSeconds }}
             successThreshold: {{ .Values.replica.readinessProbe.successThreshold }}
             failureThreshold: {{ .Values.replica.readinessProbe.failureThreshold }}
             exec:
@@ -423,7 +423,7 @@ spec:
           livenessProbe:
             initialDelaySeconds: {{ .Values.sentinel.livenessProbe.initialDelaySeconds }}
             periodSeconds: {{ .Values.sentinel.livenessProbe.periodSeconds }}
-            timeoutSeconds: {{ .Values.sentinel.livenessProbe.timeoutSeconds }}
+            timeoutSeconds: {{ add1 .Values.sentinel.livenessProbe.timeoutSeconds }}
             successThreshold: {{ .Values.sentinel.livenessProbe.successThreshold }}
             failureThreshold: {{ .Values.sentinel.livenessProbe.failureThreshold }}
             exec:
@@ -440,7 +440,7 @@ spec:
           readinessProbe:
             initialDelaySeconds: {{ .Values.sentinel.readinessProbe.initialDelaySeconds }}
             periodSeconds: {{ .Values.sentinel.readinessProbe.periodSeconds }}
-            timeoutSeconds: {{ .Values.sentinel.readinessProbe.timeoutSeconds }}
+            timeoutSeconds: {{ add1 .Values.sentinel.readinessProbe.timeoutSeconds }}
             successThreshold: {{ .Values.sentinel.readinessProbe.successThreshold }}
             failureThreshold: {{ .Values.sentinel.readinessProbe.failureThreshold }}
             exec:
